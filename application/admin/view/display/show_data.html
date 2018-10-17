@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$title |default='默认标题'}</title>
+    <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="/static/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/static/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class="h2">学生信息</h2>
+                <table class="table table-default table-bordered table-hover table-center">
+                    <tr class="bg-primary">
+                        <td>ID</td>
+                        <td>用户名</td>
+                        <td>真实名</td>
+                        <td>上次登录</td>
+                        <td>手机</td>
+                    </tr>
+                    {volist name='res' id='list'}
+                    <tr>
+                        <td>{$list.id}</td>
+                        <td>{$list.userName}</td>
+                        <td>{$list.realName}</td>
+                        <td>{$list.lastLoginTime}</td>
+                        <td>{$list.phone}</td>
+                    </tr>
+                    {/volist}
+                </table>
+            </div>
+            <div class="col-md-2"></div>
+            {$res|raw}
+        </div>
+
+    </div>
+
+</body>
+</html>
